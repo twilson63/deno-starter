@@ -2,11 +2,10 @@ FROM gitpod/workspace-full
   
 USER gitpod
 
-RUN curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip" && \
-  unzip awscliv2.zip && \
-  sudo ./aws/install
-
-RUN npm i -g @architect/architect
-RUN npm i -g aws-sdk
+# install vim plug
 RUN curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
   https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# install deno
+RUN curl -fsSL https://deno.land/x/install/install.sh | sh
+RUN /home/gitpod/.deno/bin/deno completions bash > /home/gitpod/.bashrc.d/90-deno && echo 'export DENO_INSTALL="/home/gitpod/.deno"' >> /home/gitpod/.bashrc.d/90-deno &&     echo 'export PATH="$DENO_INSTALL/bin:$PATH"' >> /home/gitpod/.bashrc.d/90-deno
