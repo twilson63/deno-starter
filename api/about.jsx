@@ -8,7 +8,7 @@ function App() {
         <title>Hello</title>
       </head>
       <body>
-        <h1>Hello from JSX</h1>
+        <h1>Hello from JSX - needs Svelte!!!!</h1>
       </body>
     </html>
   )
