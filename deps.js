@@ -1,1 +1,2 @@
-export { serve, json } from 'https://deno.land/x/sift@0.3.0/mod.ts'
+export * as R from 'https://cdn.skypack.dev/ramda'
+export { default as crocks } from 'https://cdn.skypack.dev/crocks'

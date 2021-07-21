@@ -2,4 +2,5 @@ image:
   file: .gitpod.Dockerfile
 
 tasks:
-  - init: export PS1=":) "
+  - init: deno upgrade
+  - command: export PS1=":) " && clear
